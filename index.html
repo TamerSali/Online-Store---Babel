@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <!-- ------------------------NAVBAR------------------------ -->
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-light fixed-top col-lg-12 mb-2"
+        >
+          <a class="navbar-brand text-left" href="#">
+            <h1>Babel</h1>
+          </a>
+          <div class="text-left d-block d-lg-none align-middle">
+            <a
+              type="button"
+              class="text-dark mr-3"
+              data-target="#searchModal"
+              data-toggle="modal"
+            >
+              <i class="fal fa-search fa-lg"></i>
+            </a>
+
+            <a
+              type="button"
+              class="text-dark mr-1"
+              data-toggle="modal"
+              data-target="#loginModal"
+            >
+              <i class="fal  fa-user fa-lg"></i>
+            </a>
+
+            <a
+              type="button"
+              class="btn text-dark"
+              data-toggle="modal"
+              data-target="#cartModal"
+            >
+              <i class="fal fa-shopping-cart fa-lg mr-1"></i>
+              <label
+                class="lblCartCount pr-1 pl-1 rounded"
+                id="cartitemsnumber2"
+                >0</label
+              >
+            </a>
+          </div>
+          <button
+            class="navbar-toggler m-right"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarToggler"
+            aria-controls="navbarToggler"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav m-left mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item label1" data-label1="hot">
+                <a class="nav-link" href="#features">Featured</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#allproducts">Products</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+             
+            </ul>
+          </div>
+          <div class="d-none d-lg-block align-middle">
+            <a
+              type="button"
+              class="text-dark mr-1"
+              data-toggle="modal"
+              data-target="#loginModal"
+            >
+              <i class="fal  fa-user fa-lg"></i>
+            </a>
+
+            <a
+              type="button"
+              class="btn text-dark"
+              data-toggle="modal"
+              data-target="#cartModal"
+            >
+              <i class="fal fa-shopping-cart fa-lg mr-1"></i>
+              <label class="lblCartCount pr-1 pl-1 rounded" id="cartitemsnumber"
+                >0</label
+              >
+            </a>
+          </div>
+        </nav>
+      </div>
+      <!-- -----MODAL FORM FOR LOGIN---- -->
+      <div id="loginModal" class="modal fade">
+        <div class="modal-dialog modal-login modal-dialog-centered">
+          <div class="modal-content">
+            <form>
+              <div class="modal-header">
+                <h4 class="modal-title">Login</h4>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-hidden="true"
+                >
+                  &times;
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" class="form-control" required />
+                </div>
+                <div class="form-group">
+                  <div class="clearfix">
+                    <label>Password</label>
+                    <a href="#" class="pull-right text-muted text-primary"
+                      ><small>Forgot?</small></a
+                    >
+                  </div>
+
+                  <input
+                    type="password"
+                    class="form-control"
+                    required="required"
+                  />
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary">
+                    Sign In
+                  </button>
+                </div>
+              </div>
+              <div class="modal-footer justify-content-right">
+                <span class="text-muted">Create an account </span>
+                <button
+                  type="button"
+                  class="btn btn-link text-success p-0"
+                  data-toggle="modal"
+                  data-dismiss="modal"
+                  data-target="#signupModal"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- ------------MODAL FOR SIGN UP----------------- -->
+      <div id="signupModal" class="modal fade searchmodal">
+        <div class="modal-dialog modal-signup modal-dialog-centered">
+          <div class="modal-content">
+            <form>
+              <div class="modal-header">
+                <h4 class="modal-title">Sign Up</h4>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-hidden="true"
+                >
+                  &times;
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" class="form-control" required />
+                </div>
+                <div class="form-group">
+                  <div class="clearfix">
+                    <label>Password</label>
+                  </div>
+
+                  <input
+                    type="password"
+                    class="form-control"
+                    required="required"
+                  />
+                </div>
+                <div class="form-group">
+                  <div class="clearfix">
+                    <label> Repeat Password</label>
+                  </div>
+
+                  <input
+                    type="password"
+                    class="form-control"
+                    required="required"
+                  />
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary">
+                    Sign Up
+                  </button>
+                </div>
+              </div>
+              <div class="modal-footer justify-content-right">
+                <span class="text-muted">Already have an account </span>
+                <button
+                  type="button"
+                  class="btn btn-link text-success p-0"
+                  data-toggle="modal"
+                  data-dismiss="modal"
+                  data-target="#loginModal"
+                >
+                  Sign in
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------------CART SIDEBAR-------------------------------- -->
+
+    <div
+      class="modal right fade js-pscroll"
+      id="cartModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="cartModal"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content bg-light border-0">
+          <div class="modal-header">
+            <h2 class="modal-title" id="cartModal">Your Cart</h2>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <!--===============   MODAL BODY   =================-->
+          <div class="modal-body">
+            <div class="carttable">
+              <table class="table text-left" id="myTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="mytbody"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn bg-dark text-white">
+              View Cart
+            </button>
+            <button type="button" class="btn bg-dark text-white">
+              Check Out
+            </button>
+          </div>
+        </div>
+        <!-- modal-content -->
+      </div>
+      <!-- modal-dialog -->
+    </div>
+    <!-- modal -->
+
+    <!-- ====================== MOBILE SEARCH BAR ======================== -->
+    <div id="searchModal" class="modal fade searchmodal">
+      <div class="modal-dialog modal-signup modal-dialog-start">
+        <div class="modal-content">
+          <form>
+            <div class="modal-body rounded-pill">
+              <div class="d-flex justify-content-center align-items-center">
+                <input
+                  type="text"
+                  placeholder="Type to search"
+                  class="rounded-pill p-1 searchmobiletxt form-control"
+                  required
+                />
+                <button class="btn btn-sm btn-dark ml-1 rounded-pill">
+                  <i class="fal  fa-search fa-lg p-1"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- -------------------------SLIDER------------------------ -->
+    <div class="container-fluid mt-5 pt-4 mb-5 pb-5">
+      <div class="row">
+        <div class="col-12 m-0 p-0">
+          <!--Carousel Wrapper-->
+          <div
+            id="slider"
+            class="carousel slide carousel-fade"
+            data-ride="carousel"
+          >
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <div
+                  class="view position-relative d-flex align-items-center justify-content-center"
+                >
+                  <div class="position-absolute text-white text-center">
+                    <h1 class="d-inline-block h1-responsive">
+                      Women and Men Collections
+                    </h1>
+                    <h4>2019</h4>
+                    <button class="btn btn-md rounded-pill bg-purple">
+                      Shop Now
+                    </button>
+                  </div>
+                  <img
+                    class="d-block w-100"
+                    src="images/wallpapers/carousel_1.jpg"
+                    alt="First slide"
+                  />
+                </div>
+              </div>
+              <div class="carousel-item">
+                <!--Mask color-->
+                <div
+                  class="view position-relative d-flex align-items-center justify-content-center"
+                >
+                  <div class="position-absolute text-white text-center">
+                    <h1 class="d-inline-block h1-responsive">
+                      Women New Arrivals
+                    </h1>
+                    <b class="align-top rounded-pill bg-danger p-1">2019</b>
+                    <div class="mt-3">
+                      <button class="btn btn-md rounded-pill bg-purple">
+                        Shop Now
+                      </button>
+                    </div>
+                  </div>
+                  <img
+                    class="d-block w-100"
+                    src="images/wallpapers/carousel_2.jpg"
+                    alt="First slide"
+                  />
+                </div>
+              </div>
+              <div class="carousel-item">
+                <!--Mask color-->
+                <div
+                  class="view position-relative d-flex align-items-center justify-content-center"
+                >
+                  <div
+                    class="position-absolute text-white mt-5 mt-lg-0 text-center"
+                  >
+                    <b class="align-top rounded-pill bg-danger p-1">2019</b>
+                    <h1 class="d-inline-block h1-responsive text-dark">
+                      Men New Arrivals
+                    </h1>
+
+                    <div class="mt-3">
+                      <button class="btn btn-md rounded-pill bg-purple">
+                        Shop Now
+                      </button>
+                    </div>
+                  </div>
+                  <img
+                    class="d-block w-100"
+                    src="images/wallpapers/carousel_3.png"
+                    alt="First slide"
+                  />
+                </div>
+              </div>
+            </div>
+            <!--/.Slides-->
+
+            <!--Controls-->
+            <a
+              class="carousel-control-prev"
+              href="#slider"
+              role="button"
+              data-slide="prev"
+            >
+              <i class="fal fa-arrow-circle-left fa-2x"></i>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#slider"
+              role="button"
+              data-slide="next"
+            >
+              <i class="fal fa-arrow-circle-right fa-2x"></i>
+            </a>
+            <!--/.Controls-->
+          </div>
+          <!--/.Carousel Wrapper-->
+        </div>
+      </div>
+    </div>
+    <!-----RETURN TO TOP BUTTON----->
+    <button onclick="topFunction()" id="myBtn" title="Scroll to top ">
+      <i class="fal fa-arrow-up pl-1 pr-1 pt-2 pb-2"></i>
+    </button>
+    <!-----RETURN TO TOP BUTTON----->
+    <div class="container info mt-5 mb-5">
+      <div
+        class="row p-5 d-flex justify-content-center align-items-center text-center"
+      >
+        <div class="col-md-3 col-6 border-right">
+          <i class="fal fa-truck fa-2x p-2"></i>
+          <h6>Free Delivery</h6>
+        </div>
+        <div class="col-md-3 col-6 border-right">
+          <i class="fal fa-retweet fa-2x p-2"></i>
+          <h6>Return Policy</h6>
+        </div>
+        <div class="col-md-3 col-6 border-right">
+          <i class="fal fa-headset fa-2x p-2"></i>
+          <h6>24/7 Support</h6>
+        </div>
+        <div class="col-md-3 col-6">
+          <i class="fal fa-database fa-2x p-2"></i>
+          <h6>Secure payment</h6>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------Coming Products---------------- -->
+
+    <div class="container-fluid mt-5 pt-5 pb-5 bg-light">
+      <div class="container">
+        <div class="row d-flex justify-content-center align-items-center mb-3">
+          <div class="col-3 col-md-4 text-right">
+            <a
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="prev"
+              class="prevslide"
+            >
+              <img src=" images/elements/prev.webp" />
+            </a>
+          </div>
+          <div class="col-6 col-md-4 text-center">
+            <h1 class="deals">Deals Of The Week</h1>
+          </div>
+          <div class="col-3 col-md-4 text-left">
+            <a
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="next"
+              class="nextslide"
+            >
+              <img src=" images/elements/next.webp" />
+            </a>
+          </div>
+        </div>
+        <div
+          class="row d-flex justify-content-center align-items-center text-center"
+        >
+          <div
+            id="carouselExampleControls"
+            class="carousel slide"
+            data-ride="carousel"
+            data-interval="false"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row mb-3">
+                  <div class="col-12">
+                    <h5 class="border border-right-0 border-left-0">
+                      Men Products
+                    </h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- single product -->
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-product">
+                      <img
+                        class="img-fluid mb-2 rounded"
+                        src=" images/items/man_item1.jpg"
+                        alt=""
+                      />
+                      <div class="product-details">
+                        <h5 class="product-name">Adidas Hoodie</h5>
+                        <div class="price">
+                          <h6
+                            class="d-inline-block text-danger pr-2 product-price"
+                          >
+                            150.00 BGN
+                          </h6>
+                          <span class="oldprice">210.00 BGN</span>
+                        </div>
+                        <div class="prd-bottom">
+                          <form>
+                            <button
+                              type="button"
+                              class="btn btn-link addto text-dark"
+                              onclick="AddToCart()"
+                            >
+                              <i
+                                class="fal fa-shopping-cart border p-2 text-center text-white"
+                              ></i>
+                             </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single product -->
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-product">
+                      <img
+                        class="img-fluid mb-2 rounded"
+                        src=" images/items/man_item2.jpg"
+                        alt=""
+                      />
+                      <div class="product-details">
+                        <h5 class="product-name2">
+                          Nike Sportswear Men's Crew
+                        </h5>
+                        <div class="price">
+                          <h6
+                            class="d-inline-block text-danger pr-2 product-price2"
+                          >
+                            90.00 BGN
+                          </h6>
+                          <span class="oldprice">130.00 BGN</span>
+                        </div>
+                        <div class="prd-bottom">
+                          <form>
+                            <button
+                              type="button"
+                              class="btn btn-link addto text-dark"
+                              onclick="AddToCart2()"
+                            >
+                              <i
+                                class="fal fa-shopping-cart border p-2 text-white"
+                              ></i>
+  
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single product -->
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-product">
+                      <img
+                        class="img-fluid mb-2 rounded"
+                        src=" images/items/man_item3.jpg"
+                        alt=""
+                      />
+                      <div class="product-details">
+                        <h5 class="product-name3">Nike Red Sweatshirt</h5>
+                        <div class="price">
+                          <h6
+                            class="d-inline-block text-danger pr-2 product-price3"
+                          >
+                            40.00 BGN
+                          </h6>
+                          <span class="oldprice">60.00 BGN</span>
+                        </div>
+                        <div class="prd-bottom">
+                          <form>
+                            <button
+                              type="button"
+                              class="btn btn-link addto text-dark"
+                              onclick="AddToCart3()"
+                            >
+                              <i
+                                class="fal fa-shopping-cart  border p-2 text-white"
+                              ></i>
+  
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single product -->
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-product">
+                      <img
+                        class="img-fluid mb-2 rounded"
+                        src=" images/items/man_item4.jpg"
+                        alt=""
+                      />
+                      <div class="product-details">
+                        <h5 class="product-name4">Pull & Bear Grey Hoodie</h5>
+                        <div class="price">
+                          <h6
+                            class="d-inline-block text-danger pr-2 product-price4"
+                          >
+                            30.00 BGN
+                          </h6>
+                          <span class="oldprice">18.00 BGN</span>
+                        </div>
+                        <div class="prd-bottom">
+                          <form>
+                            <button
+                              type="button"
+                              class="btn btn-link addto text-dark"
+                              onclick="AddToCart4()"
+                            >
+                              <i
+                                class="fal fa-shopping-cart  border p-2 text-white"
+                              ></i>
+  
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single product -->
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row text-center mb-3">
+                  <div class="col-12">
+                    <h5 class="border border-right-0 border-left-0">
+                      Women Products
+                    </h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- single product -->
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-product">
+                      <img
+                        class="img-fluid mb-2 rounded"
+                        src=" images/items/woman_item4.jpg"
+                        alt=""
+                      />
+                      <div class="product-details">
+                        <h5>addidas Vintage 90s jacket</h5>
+                        <div class="price">
+                          <h6 class="d-inline-block text-danger pr-2">
+                            90.00 BGN
+                          </h6>
+                          <span class="oldprice">120.00 BGN</span>
+                        </div>
+                        <div class="prd-bottom">
+                          <form>
+                            <button
+                              type="button"
+                              class="btn btn-link addto text-dark"
+                            >
+                              <i
+                                class="fal fa-shopping-cart border p-2 text-white"
+                              ></i>
+  
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single product -->
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-product">
+                      <img
+                        class="img-fluid mb-2 rounded"
+                        src=" images/items/woman_item3.jpg "
+                        alt=""
+                      />
+                      <div class="product-details">
+                        <h5>Velour Jumpsuit by Puma</h5>
+                        <div class="price">
+                          <h6 class="d-inline-block text-danger pr-2">
+                            130.00 BGN
+                          </h6>
+                          <span class="oldprice">190.00 BGN</span>
+                        </div>
+                        <div class="prd-bottom">
+                          <form>
+                            <button
+                              type="button"
+                              class="btn btn-link addto text-dark"
+                            >
+                              <i
+                                class="fal fa-shopping-cart border p-2 text-white"
+                              ></i>
+  
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single product -->
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-product">
+                      <img
+                        class="img-fluid mb-2 rounded"
+                        src=" images/items/woman_item2.jpg"
+                        alt=""
+                      />
+                      <div class="product-details">
+                        <h5>Nike Wind Breaker</h5>
+                        <div class="price">
+                          <h6 class="d-inline-block text-danger pr-2">
+                            29.50 BGN
+                          </h6>
+                          <span class="oldprice">60.99 BGN</span>
+                        </div>
+                        <div class="prd-bottom">
+                          <form>
+                            <button
+                              type="button"
+                              class="btn btn-link addto text-dark"
+                            >
+                              <i
+                                class="fal fa-shopping-cart  border p-2 text-white"
+                              ></i>
+  
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single product -->
+                  <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-product">
+                      <img
+                        class="img-fluid mb-2 rounded"
+                        src=" images/items/woman_item1.jpg"
+                        alt=""
+                      />
+                      <div class="product-details">
+                        <h5>Chanel Dress - Black</h5>
+                        <div class="price">
+                          <h6 class="d-inline-block text-danger pr-2">
+                            70.20 BGN
+                          </h6>
+                          <span class="oldprice">150.00 BGN</span>
+                        </div>
+                        <div class="prd-bottom">
+                          <form>
+                            <button
+                              type="button"
+                              class="btn btn-link addto text-dark"
+                            >
+                              <i
+                                class="fal fa-shopping-cart  border p-2 text-white"
+                              ></i>
+  
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single product -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- --------------------FEATURES SECTION----------------- -->
+    <section class="bg-light features-section" id="features">
+      <div class="container text-center pt-5 pb-5">
+        <div class="row mb-4">
+          <div class="col-12" id="hotfeatures">
+            <h1 class="d-inline-block pr-2">Featured</h1>
+            <span class="align-top text-right text-white rounded bg-danger p-1"
+              >HOT</span
+            >
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <div class="col-6 text-left">
+            <h6 class="ml-2">Sort</h6>
+            <select
+              class="p-1 bg-light rounded-pill"
+              id="select"
+              onchange="sortCards()"
+            >
+              <option selected disabled hidden>Sort by...</option>
+              <option>Name Ascending</option>
+              <option>Name Descending</option>
+              <option>Price Ascenting</option>
+              <option>Price Descending</option>
+            </select>
+          </div>
+          <div class="col-6 text-right">
+            <h6 class="mr-2">Search</h6>
+            <input
+              type="text"
+              placeholder="Search.."
+              id="searchCard"
+              onkeyup="searchFunction()"
+              class="bg-light rounded-pill pl-2 pt-1 searchinput"
+            />
+          </div>
+        </div>
+
+        <div class="product-features row text-center" id="myItems">
+          <div class="col-6 col-lg-4 col-xl-2 item bg-light border-0">
+            <div
+              class="position-relative d-flex aling-items-start justify-content-start"
+            >
+              <div class="position-absolute mt-1 ml-1">
+                <span class="text-white bg-danger pl-1 pr-1 rounded">New</span>
+              </div>
+              <img
+                class="d-block w-100 mb-2 rounded"
+                src=" images/items/woman_item1.jpg"
+                alt=" No image"
+              />
+            </div>
+            <div class="product-body">
+              <h5 class="productname">Chanel Dress - Black</h5>
+              <p class="price text-light bg-purple rounded-pill">70.20 BGN</p>
+              <form>
+                <button
+                  type="submit"
+                  class="btn btn-link featuresbag text-dark"
+                >
+                  <i class="fal fa-shopping-cart fa-lg"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4 col-xl-2 item bg-light border-0">
+            <div
+              class="position-relative d-flex aling-items-start justify-content-start"
+            >
+              <div class="position-absolute mt-1 ml-1">
+                <span class="text-white bg-danger pl-1 pr-1 rounded">New</span>
+              </div>
+              <img
+                class="d-block w-100 mb-2 rounded"
+                src=" images/items/man_item1.jpg"
+                alt=" No image"
+              />
+            </div>
+            <div class="product-body">
+              <h5 class="productname">Addidas New Hammer Sole</h5>
+              <p class="price text-light bg-purple rounded-pill">150.00 BGN</p>
+              <form>
+                <button
+                  type="submit"
+                  class="btn btn-link featuresbag text-dark"
+                >
+                  <i class="fal fa-shopping-cart fa-lg"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4 col-xl-2 item bg-light border-0">
+            <div
+              class="position-relative d-flex aling-items-start justify-content-start"
+            >
+              <div class="position-absolute mt-1 ml-1">
+                <span class="text-white bg-danger pl-1 pr-1 rounded">New</span>
+              </div>
+              <img
+                class="d-block w-100 mb-2 rounded"
+                src=" images/items/woman_item2.jpg"
+                alt=" No image"
+              />
+            </div>
+            <div class="product-body">
+              <h5 class="productname">Nike Wind Breaker</h5>
+              <p class="price text-light bg-purple rounded-pill">29.50 BGN</p>
+              <form>
+                <button
+                  type="submit"
+                  class="btn btn-link featuresbag text-dark"
+                >
+                  <i class="fal fa-shopping-cart fa-lg"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4 col-xl-2 item bg-light border-0">
+            <div
+              class="position-relative d-flex aling-items-start justify-content-start"
+            >
+              <div class="position-absolute mt-1 ml-1">
+                <span class="text-white bg-danger pl-1 pr-1 rounded">New</span>
+              </div>
+              <img
+                class="d-block w-100 mb-2 rounded"
+                src=" images/items/man_item3.jpg"
+                alt=" No image"
+              />
+            </div>
+            <div class="product-body">
+              <h5 class="productname">Nike Red Sweatshirt</h5>
+              <p class="price text-light bg-purple rounded-pill">40.00 BGN</p>
+              <form>
+                <button
+                  type="submit"
+                  class="btn btn-link featuresbag text-dark"
+                >
+                  <i class="fal fa-shopping-cart fa-lg"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4 col-xl-2 item bg-light border-0">
+            <div
+              class="position-relative d-flex aling-items-start justify-content-start"
+            >
+              <div class="position-absolute mt-1 ml-1">
+                <span class="text-white bg-danger pl-1 pr-1 rounded">New</span>
+              </div>
+              <img
+                class="d-block w-100 mb-2 rounded"
+                src=" images/items/woman_item3.jpg"
+                alt=" No image"
+              />
+            </div>
+            <div class="product-body">
+              <h5 class="productname">Velour Jumpsuit by Puma</h5>
+              <p class="price text-light bg-purple rounded-pill">130.00 BGN</p>
+              <form>
+                <button
+                  type="submit"
+                  class="btn btn-link featuresbag text-dark"
+                >
+                  <i class="fal fa-shopping-cart fa-lg"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4 col-xl-2 item bg-light border-0">
+            <div
+              class="position-relative d-flex aling-items-start justify-content-start"
+            >
+              <div class="position-absolute mt-1 ml-1">
+                <span class="text-white bg-danger pl-1 pr-1 rounded">New</span>
+              </div>
+              <img
+                class="d-block w-100 mb-2 rounded"
+                src=" images/items/man_item4.jpg"
+                alt=" No image"
+              />
+            </div>
+            <div class="product-body">
+              <h5 class="productname">Pull & Bear Grey Hoodie</h5>
+              <p class="price text-light bg-purple rounded-pill">30.00 BGN</p>
+              <form>
+                <button
+                  type="submit"
+                  class="btn btn-link featuresbag text-dark"
+                >
+                  <i class="fal fa-shopping-cart fa-lg"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ------------------- ALL PRODUCTS SECTION -------------------- -->
+    <section class="all-products mb-5 pb-5 mt-5" id="allproducts">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12">
+            <h1>All Products</h1>
+          </div>
+        </div>
+        <div class="row mb-5 text-center">
+          <div class="col-12">
+            <a
+              href="#carouselItems"
+              role="button"
+              class="pr-2"
+              data-slide-to="0"
+            >
+              All Products
+            </a>
+            <a
+              href="#carouselItems"
+              role="button"
+              class="pr-2"
+              data-slide-to="1"
+            >
+              Man
+            </a>
+            <a href="#carouselItems" role="button" data-slide-to="2">
+              Woman
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="carousel slide carousel-fade"
+          id="carouselItems"
+          data-ride="carousel"
+          data-interval="false"
+        >
+          <div class="carousel-inner col-12">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-lg-3 col-6">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">
+                          Addidas Hoodie
+                        </h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">150.00 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/man_item1.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-6 mb-lg-0 mb-4">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">Velour Jumpsuit by Puma</h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">130.00 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/woman_item3.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">Nike Red Sweatshirt</h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">40.00 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/man_item3.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">Chanel Dress - Black</h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">70.20 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/woman_item1.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-lg-4">
+                <div class="col-lg-3 col-6">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">Pull & Bear Grey Hoodie</h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">30.00 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/man_item4.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-6 mb-lg-0 mb-4">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">Nike Wind Breaker</h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">29.50 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/woman_item2.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-6 mb-lg-0 mb-4">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">
+                          Nike Sportswear Men's Crew
+                        </h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">90.00 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/man_item2.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">Addidas Vintage 90s jacket</h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">90.00 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/woman_item4.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-lg-3 col-6">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">
+                          Adidas Hoodie
+                        </h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">150.00 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/man_item1.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-6 mb-lg-0 mb-4">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">
+                          Nike Sportswear Men's Crew
+                        </h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">90.00 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/man_item2.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">Nike Red Sweatshirt</h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">40.00 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/man_item3.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">Pull & Bear Grey Hoodie</h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">30.00 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/man_item4.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-lg-3 col-6">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">Chanel Dress - Black</h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">70.20 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/woman_item1.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-6 mb-lg-0 mb-4">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">Nike Wind Breaker</h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">29.50 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/woman_item2.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">Velour Jumpsuit by Puma</h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">130.00 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/woman_item3.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                  <div
+                    class="addtocart position-relative d-flex align-items-end justify-content-center"
+                  >
+                    <div class="imgbutton position-absolute pb-5">
+                      <button class="btn btn-sm">Add To Cart</button>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <div class="position-absolute imgtext text-center">
+                        <h5 class="text-white">Adidas Vintage 90s jacket</h5>
+                        <h6 class="text-purple">
+                          <b class="border rounded pl-1 pr-1">90.00 BGN</b>
+                        </h6>
+                      </div>
+                      <img
+                        src=" images/items/woman_item4.jpg"
+                        class="img-fluid rounded"
+                        alt="img8"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="brand-section border-top">
+      <div class="container pt-3 pb-3">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-2 col-4">
+            <img class="brands" src=" images/logos/puma_logo.png" />
+          </div>
+          <div class="col-md-2 col-4">
+            <img class="brands" src=" images/logos/dg_logo.png" />
+          </div>
+          <div class="col-md-2 col-4">
+            <img class="brands" src=" images/logos/chanel_logo.png" />
+          </div>
+          <div class="col-md-2 col-4">
+            <img class="brands" src=" images/logos/adidas_logo.png" />
+          </div>
+          <div class="col-md-2 col-4">
+            <img class="brands" src=" images/logos/converse_logo.png" />
+          </div>
+          <div class="col-md-2 col-4">
+            <img class="brands" src=" images/logos/nike_logo.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-section bg-dark text-light pt-5 pb-4" id="contact">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-3 col-12 text-center text-md-left mb-3 mb-md-0"
+          >
+            <h2>Babel</h2>
+            <p>
+              The customer is at the center of our unique business model, which
+              includes design, production, distribution and sales through our
+              extensive sales network.
+            </p>
+            <div class="d-block d-lg-none">
+              <a href="">
+                <i
+                  class="fab fa-instagram fa-lg text-danger p-2"
+                  aria-hidden="true"
+                ></i>
+              </a>
+              <a href="">
+                <i class="fab fa-facebook-f fa-lg p-2" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i
+                  class="fab fa-pinterest-p fa-lg text-danger p-2"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-2 col-12 text-center text-md-left mb-3 mb-md-0"
+          >
+            <h2>Help</h2>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <ul class="list-unstyled help">
+                  <li>
+                    <a href="#" class="text-light">Shipping Information</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-light">Returns &amp; Exchange</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-light">Terms &amp; Conditions</a>
+                  </li>
+                  <li><a href="#" class="text-light">Privacy Policy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-12 text-center text-md-left">
+            <h2 class="">Questions?</h2>
+
+            <ul class="list-unstyled questions">
+              <li>
+                <span class="text"
+                  ><i class="fal fa-map-marker-alt fa-lg pr-2"></i>ul. General
+                  Kolev 68, Varna, Bulgaria</span
+                >
+              </li>
+              <li>
+                <span class="text"
+                  ><i
+                    class="fal fa-phone fa-flip-horizontal fa-lg pl-2 pb-2"
+                  ></i
+                  >+359 89 992 1234
+                </span>
+              </li>
+              <li>
+                <span
+                  ><i class="fal fa-envelope pr-2 fa-lg"></i
+                  >babel@babel.com</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-3 col-md-3 col-12 text-center text-md-left mb-3 mb-md-0"
+          >
+            <h2>Subscribe</h2>
+            <form>
+              <input
+                type="email"
+                class="bg-secondary border-0 text-white round form-control submitinput"
+                placeholder="Enter your email"
+                required
+              />
+              <button
+                type="submit"
+                class="btn bg-danger btn-md text-white form-control mt-2"
+              >
+                Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="container-fluid pt-5 pb-5 bg-dark d-none d-lg-block">
+      <div class="socialicons d-flex justify-content-center pb-2">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="icon">
+              <div class="i3">
+                <a href="">
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                  <span>Instagram</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="icon">
+              <div class="i1">
+                <a href="">
+                  <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                  <span>Facebook</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="icon">
+              <div class="i2">
+                <a href="">
+                  <i class="fab fa-pinterest-p"></i>
+                  <span>Pinterest</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://kit.fontawesome.com/19f2c5d14c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/backtotop.js"></script>
+    <script src="js/sortandsearch.js"></script>
+  </body>
+</html>
